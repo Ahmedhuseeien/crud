@@ -29,7 +29,7 @@ function addproduct() {
     }
 
 }
-// hamada
+// hamada 2
 function cleraInputs() {
     productName.value = null;
     productPrice.value = null;
