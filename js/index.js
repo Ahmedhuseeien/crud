@@ -11,8 +11,9 @@ if (localStorage.getItem('allProducts')) {
     products = JSON.parse(localStorage.getItem('allProducts'))
     displayProduct(products)
 }
+
 function addproduct() {
-    if (inputValidate(productName) & inputValidate(productPrice) & inputValidate(productCategory) & inputValidate(productDescription)& inputValidate(productImage)) {
+    if (inputValidate(productName) & inputValidate(productPrice) & inputValidate(productCategory) & inputValidate(productDescription) & inputValidate(productImage)) {
         var product = {
             pName: productName.value,
             price: productPrice.value,
@@ -28,6 +29,7 @@ function addproduct() {
     }
 
 }
+
 function cleraInputs() {
     productName.value = null;
     productPrice.value = null;
@@ -134,7 +136,7 @@ function inputValidate(element) {
         productPrice: /^[1-9]\d{2,5}$/,
         productCategory: /^(TV|Mobile|Screens|Electronic)$/i,
         productDescription: /^.{3,100}$/,
-        productImage:/^.{1,100}\.(png|jpg|jpeg|svg|avif)$/
+        productImage: /^.{1,100}\.(png|jpg|jpeg|svg|avif)$/
     }
     if (inputsRegex[element.id].test(element.value)) {
         element.classList.remove('is-invalid')
