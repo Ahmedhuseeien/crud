@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product CRUD System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+
+    <section class="crud">
+        <div class="container crud-form bg-light p-3 my-4 rounded ">
+            <h1 class="text-center">Store🪶 </h1>
+
+
+            <div class="form-floating my-1">
+                <input oninput="inputValidate(this)" type="text" class="form-control" id="productName" placeholder="">
+                <p class="fs-5 fw-bold rounded alert alert-danger p-3 d-none "> productName should start with Uppercase</p>
+                <label for="productName">Product Name </label>
+            </div>
+
+            <div class="form-floating my-1">
+                <input oninput="inputValidate(this)" type="number" class="form-control" id="productPrice"
+                    placeholder="">
+                <p class="fs-5 fw-bold rounded alert alert-danger p-3 d-none"> productPrice should start with (3/6)</p>
+
+                <label for="productPrice">Product Price </label>
+            </div>
+
+            <div class="form-floating my-1">
+                <input onchange="inputValidate(this)" list="category" type="text" class="form-control"
+                    id="productCategory" placeholder="">
+                <p class="fs-5 fw-bold rounded alert alert-danger p-3 d-none"> productCategory should start with (TV
+                    - Mobile - Screens - Electronic)</p>
+                <label for="productCategory">Product Category </label>
+                <datalist id="category">
+                    <option value="TV" />
+                    <option value="Mobile" />
+                    <option value="Screens" />
+                    <option value="Electronic" />
+                </datalist>
+            </div>
+
+            <div class="form-floating my-1">
+                <textarea oninput="inputValidate(this)" style="height: 100px;" class="form-control"
+                    id="productDescription" placeholder=""></textarea>
+                <p class="fs-5 fw-bold rounded alert alert-danger p-3 d-none"> productDescription should start with (3/100)</p>
+                <label for="productDescription">Product Description </label>
+            </div>
+
+            <div class="form-floating my-1">
+                <input onchange="inputValidate(this)" type="file" class="form-control" id="productImage" placeholder="">
+                <p class="fs-5 fw-bold rounded alert alert-danger p-3 d-none">(png - jpg - jpeg - svg - avif)</p>
+                <label for="productImage">Product Image </label>
+            </div>
+
+            <div class="mt-3">
+                <button onclick="addproduct()" id="btnAdd" class="btn btn-outline-dark w-100">+Add Product</button>
+
+                <button onclick="updateProduct()" id="btnUpdate" class="btn btn-warning w-100 d-none">Update
+                    Product</button>
+            </div>
+
+        </div>
+    </section>
+    <section class="crud-display">
+        <input oninput="searchForProduct(this.value)" type="text" class="form-control mx-auto w-50" id="searchInput"
+            placeholder="Search by product name ...">
+        <div class="container">
+            <div class="row" id="rowElements">
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
