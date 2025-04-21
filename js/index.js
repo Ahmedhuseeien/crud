@@ -11,7 +11,6 @@ if (localStorage.getItem('allProducts')) {
     products = JSON.parse(localStorage.getItem('allProducts'))
     displayProduct(products)
 }
-
 function addproduct() {
     if (inputValidate(productName) & inputValidate(productPrice) & inputValidate(productCategory) & inputValidate(productDescription) & inputValidate(productImage)) {
         var product = {
@@ -29,7 +28,6 @@ function addproduct() {
     }
 
 }
-// hamada 2
 function cleraInputs() {
     productName.value = null;
     productPrice.value = null;
